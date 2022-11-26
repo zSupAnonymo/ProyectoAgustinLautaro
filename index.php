@@ -1,9 +1,19 @@
 <?php
-    include("src/services/dbconnection.php");
+include("src/services/dbconnection.php");
 
-    $con = conectar();
+$conn = conectar();
 
-    echo '<script language="javascript">alert("conectado nashei");</script>';
+
+//consulta de datos
+/* $consulta = "select name, surname, email from users";
+    $results =  mysqli_query($conn, $consulta);
+
+    $fila = mysqli_fetch_row($results);
+
+    echo $fila[0]. ' ' . $fila[1]; */
+
+    
+
 ?>
 
 <!DOCTYPE html>
