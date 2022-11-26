@@ -3,7 +3,7 @@
 
     $con = conectar();
 
-    echo 'Conectado correctamente';
+    echo '<script language="javascript">alert("conectado nashei");</script>';
 ?>
 
 <!DOCTYPE html>
