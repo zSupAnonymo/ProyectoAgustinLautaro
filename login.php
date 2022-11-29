@@ -13,7 +13,7 @@
 
         if (is_countable($results) && count($results) > 0 && password_verify($_POST['password'], $results['password'])) { //COMPARAMOS CONTRASEÑA DEL NAVEGADOR A LA ALMACENADA EN BASE DE DATOS
             $_SESSION['user_id'] = $results['id'];
-            header('location: /index.php');
+            header('location: index.php');
         } else {
             $message = 'Las credenciales no son correctas';
         }
