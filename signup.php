@@ -1,8 +1,27 @@
+<?php
+    require 'database.php';
+
+    $message = '';
+
+    if (!empty($_POST['email']) && !empty($_POST['password'])) { //COMPRUEBA QUE LOS CAMPOS NO ESTEN VACIOS
+        $sql = "INSERT INTO users (email, password) VALUES (:email, :password)"; // INSERTA DATOS DENTRO DE LA BASE DE DATOS
+        $stmt = $conn->prepare($sql); //EJECUTA METODO PREPARE QUE EJECUTA UNA QUERY EN SQL
+        $stmt->bindParam(':email',$_POST['email']); //VINCULA DATOS
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT); //CIFRA CONTRASEÑA
+        $stmt->bindParam(':password', $password);
+
+        if ($stmt->execute()) {
+            $message = 'Usuario creado satisfactoriamente';
+        } else {
+            $message = 'El usuario no se ha podido crear';
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Register</title>
+		<title>Registro</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
         <!-- BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -10,10 +29,15 @@
         <link rel="stylesheet" href="styles/style.css">
 	</head>
 	<body>
+
+    <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p> <!--Escribir mensaje si la variable no está vacia!-->
+    <?php endif; ?>
+
         <div class="login container-fluid d-flex align-items-center justify-content-center">
             <div class="register text-center">
                 <h1>Registro</h1>
-                <form action="register.php" method="post" autocomplete="off" class="d-flex flex-wrap justify-content-center">
+                <form action="signup.php" method="post" autocomplete="off" class="d-flex flex-wrap justify-content-center">
                     <label for="username" class="icon d-flex justify-content-center align-items-center">
                         <i class="fas fa-user"></i>
                     </label>
