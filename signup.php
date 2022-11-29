@@ -33,8 +33,8 @@
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p> <!--Escribir mensaje si la variable no está vacia!-->
     <?php endif; ?>
-
-        <div class="login container-fluid d-flex align-items-center justify-content-center">
+    <section class="register-section">
+        <div class="container-fluid d-flex align-items-center justify-content-center">
             <div class="register text-center">
                 <h1>Registro</h1>
                 <form action="signup.php" method="post" autocomplete="off" class="d-flex flex-wrap justify-content-center">
@@ -54,7 +54,7 @@
                 </form>
             </div>
         </div>
-
+    </section>
     <!-- SCRIPT BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	</body>
