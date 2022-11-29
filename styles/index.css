@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.welcome {
+    width: 100%;
+    height: 100vh;
+    background-color: #435165;
+}
+
+.box-welcome {
+    width: 500px;
+    background-color: white;
+    box-shadow: 10px 14px 13px -5px rgba(0,0,0,0.68);
+}
+
+.box-welcome h1 {
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+
+.btn-grid {
+    padding: 2rem 0;
+}
+
+.btn {
+    background-color: #3274d6;
+}
