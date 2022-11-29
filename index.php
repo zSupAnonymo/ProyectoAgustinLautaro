@@ -1,8 +1,10 @@
 <?php
+
+session_start();
  require 'database_connect.php';
  
  if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT id,mail,password FROM users where id = :id');
+    $records = $conn->prepare('SELECT id,email,password FROM users where id = :id');
     $records->bindParam(':id',$_SESSION['user_id']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);

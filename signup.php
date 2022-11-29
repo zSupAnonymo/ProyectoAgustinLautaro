@@ -23,17 +23,17 @@
 		<meta charset="utf-8">
 		<title>Registro</title>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link rel="stylesheet" href="styles/register.css">
         <!-- BOOTSTRAP -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <!-- CSS -->
-        <link rel="stylesheet" href="styles/register.css">
 	</head>
 	<body>
 
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p> <!--Escribir mensaje si la variable no está vacia!-->
     <?php endif; ?>
-    <section class="register-section">
+
         <div class="container-fluid d-flex align-items-center justify-content-center">
             <div class="register text-center">
                 <h1>Registro</h1>
@@ -50,11 +50,13 @@
                         <i class="fas fa-envelope"></i>
                     </label>
                     <input type="email" name="email" placeholder="Email" id="email" required>
-                    <input type="submit" value="Register">
+                    <input type="submit" value="Registrarse" class="fs-5">
                 </form>
             </div>
         </div>
-    </section>
+        <p class="text-light py-4 fs-4">Si ya tienes una cuenta <a href="login.php" class="py-4 fs-4">Inicia Sesión</a> </p>
+
+
     <!-- SCRIPT BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	</body>
